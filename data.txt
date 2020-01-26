@@ -1,0 +1,50 @@
+65 30000000 0
+10
+4
+I'm sorry, but I'm just not catching what you're throwing. Try that again.
+Whoop . . . . . I meant whoops, That was a false start. I'll let you replay that down.
+Come on man! Read the play book! Give me a valid answer.
+The referee did not understand what you were trying to do there. Let's watch the instant replay.
+2
+Howdy TAMUHack20! This is Ol' Rock (the Good Ag). I'm here to help you beat the hell out of class registration! I just have a few questions for you, so pay attention to the play calls I'll be passing you!
+Make sure to respond with the appropriate numerical answer or I won't be able to understand you.
+3
+First question . . . . . Do you prefer morning or afternoon classes?
+1) Morning classes! (yawn...)
+2) Afternoon classes!
+3
+Next question . . . . . Do you prefer MWF or TR classes?
+1) Monday, Wednesday, Friday...
+2) Tuesday, Thursday (I won't judge)
+3
+Third question . . . . . Do you want fewer classes on Friday?
+1) That wasn't obvious?
+2) Friday Freedom isn't very important.
+3
+Fourth question . . . . . Do you prefer free time between classes?
+1) Extra time between classes is better.
+2) Taking the classes one-after-the-other is better.
+3
+Last profile question . . . . . Do you care which professor you end up with?
+1) You have no choice... this hasn't been implemented yet
+2) It doesn't matter what you choose.
+1
+Now on to your classes. How many classes are you taking next semester?
+7
+You must have stepped on the seal and intend to graduate in INFINITE semesters then...
+Just one? Why do you need me then?
+Just two? Why do you need me then?
+Three classes? No big deal! Which classes are they?
+Great! Which classes are you taking?
+That's a lot of classes you're taking Aggie! Which classes are they?
+That is absurd. You can't take that many classes.
+2
+Here's another play call you have to get correct. Input your classes with the department name first and the course number last. For example, any fish worth his salt knows to input ENGR 102 to take Python programming and MATH 151 to take Calculus 1. Have at it.
+I'm not sure that's a real class. Say that again.
+
+	//do you have a professor preference
+	
+	//what is most important to you? (prof vs time vs day)
+	//do you prefer MWF classes or TR classes?
+	//how many courses are you taking next semester?
+	//... foreach... What course are you taking (ex.) ENGR 102?
