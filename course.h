@@ -8,11 +8,11 @@
 class Course {
 	string name;
 	string department;
-	string num;
+	int num;
 	vector<Section> sections;
 
 public:
-	Course() : name(""), department(""), num(""), sections({}) {}
+	Course() : name(""), department(""), num(0), sections({}) {}
 
 	const string& getDepartment() const {
 		return department;
@@ -22,23 +22,23 @@ public:
 		this->department = department;
 	}
 
-	const string& getName() const {
+	const string getName() const {
 		return name;
 	}
 
-	void setName(const string &name) {
-		this->name = name;
+	void setName(const string str) {
+		name = str;
 	}
 
-	const string& getNum() const {
+	const int getNum() const {
 		return num;
 	}
 
-	void setNum(const string &num) {
-		this->num = num;
+	void setNum(const int n) {
+		num = n;
 	}
 
-	vector<Section>& getSection() {
+	vector<Section>& getSections() {
 		return sections;
 	}
 
@@ -51,7 +51,12 @@ public:
 	}
 
 	void print(){
-		cout << "Name: "<< getName() << ", Department: " << getDepartment() << ", Num: "<< getNum() << endl;
+		cout << "Name: " << getName();
+		cout << ", Department: " << getDepartment();
+		cout << ", Num: "<< getNum() << endl;
+		for(Section s : sections) {
+			s.print();
+		}
 	}
 };
 

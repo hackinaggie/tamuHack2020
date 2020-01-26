@@ -12,12 +12,12 @@
 class Type {
 	string lecType;
 	string days;
-	string startTime;
-	string endTime;
+	int startTime;
+	int endTime;
 
 public:
-	Type() : lecType(""), days(""), startTime(""), endTime("") {}
-	const string& getEndTime() const {
+	Type() : lecType(""), days(""), startTime(0), endTime(0) {}
+	const int getEndTime() const {
 		return endTime;
 	}
 
@@ -30,11 +30,11 @@ public:
 		this->lecType = lecType;
 	}
 
-	void setEndTime(const string &endTime) {
+	void setEndTime(const int endTime) {
 		this->endTime = endTime;
 	}
 
-	const string& getStartTime() const {
+	const int getStartTime() const {
 		return startTime;
 	}
 
@@ -46,13 +46,12 @@ public:
 		return days;
 	}
 
-	void setStartTime(const string &startTime) {
+	void setStartTime(const int startTime) {
 		this->startTime = startTime;
 	}
 
 	void print(){
-		cout<< "	Lecture Type: " << getLecType() << ", Days: "<< getDays() << ", Start Time: " << getStartTime()
-				<< ", End Time: " << getEndTime() << endl;
+		cout << "      Lecture Type: " << getLecType() << ", Days: "<< getDays() << ", Start Time: " << getStartTime()<< ", End Time: " << getEndTime() << endl;
 	}
 };
 

@@ -4,17 +4,17 @@
 #include "types.h"
 
 class Section {
-	string crn;
-	string sNum;
+	int crn;
+	int sNum;
 	vector<Type> types;
 
 public:
-	Section() : crn(""), sNum(""), types({}) {}
-	const string& getCrn() const {
+	Section() : crn(0), sNum(0), types({}) {}
+	const int getCrn() const {
 		return crn;
 	}
 
-	void setCrn(const string &crn) {
+	void setCrn(const int crn) {
 		this->crn = crn;
 	}
 
@@ -26,20 +26,23 @@ public:
 		this->types = types;
 	}
 
-	const string& getNum() const {
+	const int getNum() const {
 		return sNum;
 	}
 
-	void setNum(const string &num) {
+	void setNum(const int num) {
 		sNum = num;
 	}
 
-	void addType( Type typ) {
+	void addType(Type typ) {
 		this->types.push_back(typ);
 	}
 
-	void print(){
-		cout << "    CRN: " << getCrn() << ", Sec Number: " << getNum() << endl;
+	void print() {
+		cout << "   CRN: " << getCrn() << ", Sec Number: " << getNum() << endl;
+		for(Type t : types) {
+			t.print();
+		}
 	}
 };
 
