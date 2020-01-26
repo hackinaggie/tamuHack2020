@@ -141,6 +141,7 @@ Course loadCourse(string department, int courseNum) {
 		
 		bool found = (cNum == courseNum);
 		if(found) {
+			s.setName(name);
 			s.setNum(sNum);
 			s.setCrn(crn);
 		}
@@ -181,7 +182,6 @@ Course loadCourse(string department, int courseNum) {
 	
 	course.setDepartment(department);
 	course.setNum(courseNum);
-	course.setName(name);
 	return course;
 }
 
@@ -229,7 +229,6 @@ bool isSectionConflict(Section a, Section b) {
 }
 
 vector<vector<Section>> getScheduleList(vector<Course> courses) {
-	int eliminated = 0;
 	vector<vector<Section>> unorderedMap;
 	vector<vector<Section>> scheduleList;
 	
@@ -268,7 +267,6 @@ vector<vector<Section>> getScheduleList(vector<Course> courses) {
 	}
 	
 	delete[] factors;
-	cout << eliminated << endl;
 	return scheduleList;
 }
 
@@ -364,13 +362,20 @@ int main(int argc, char **argv) {
 	if(scheduleList.size() == 0) {
 		printStatement(text[10][0]);
 	} else {
-		printStatement(text[10][1]);
-		printString(to_string(scheduleList.size()) + " ");
-		printStatement(text[10][2]);
+		printStatement(text[10][1] + " " + to_string(scheduleList.size()) + " " + text[10][2]);
 		printStatement(text[10][3]);
 		int randSchedule = rand() % scheduleList.size();
-		for(Section s : scheduleList[randSchedule]) s.print();
-		
+		vector<Section> schedule = scheduleList[randSchedule];
+		for(int i = 0; i < schedule.size(); i++) {
+			Section s = schedule[i];
+			Course c = courseList[i];
+			
+			printStatement("CRN " + to_string(s.getCrn()));
+			printStatement(c.getDepartment() + " " + to_string(c.getNum()) + "-" + to_string(s.getNum()) + ":" + s.getName());
+			for(Type t : s.getTypes()) {
+				printStatement("   Type: " + t.getLecType() + ", Days: " + t.getDays() + ", " + t.getStartTimeString() + " to " + t.getEndTimeString());
+			}
+		}
 	}
 	
 	return 0;

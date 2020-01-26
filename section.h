@@ -6,12 +6,21 @@
 class Section {
 	int crn;
 	int sNum;
+	string name;
 	vector<Type> types;
 
 public:
-	Section() : crn(0), sNum(0), types({}) {}
+	Section() : crn(0), sNum(0), name(""), types({}) {}
 	const int getCrn() const {
 		return crn;
+	}
+	
+	void setName(const string& name) {
+		this->name = name;
+	}
+	
+	const string& getName() const {
+		return name;
 	}
 
 	void setCrn(const int crn) {
@@ -36,13 +45,6 @@ public:
 
 	void addType(Type typ) {
 		this->types.push_back(typ);
-	}
-
-	void print() {
-		cout << "   CRN: " << getCrn() << ", Sec Number: " << getNum() << endl;
-		for(Type t : types) {
-			t.print();
-		}
 	}
 };
 

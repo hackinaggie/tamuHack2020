@@ -6,13 +6,12 @@
 #include "section.h"
 
 class Course {
-	string name;
 	string department;
 	int num;
 	vector<Section> sections;
 
 public:
-	Course() : name(""), department(""), num(0), sections({}) {}
+	Course() : department(""), num(0), sections({}) {}
 
 	const string& getDepartment() const {
 		return department;
@@ -20,14 +19,6 @@ public:
 
 	void setDepartment(const string &department) {
 		this->department = department;
-	}
-
-	const string getName() const {
-		return name;
-	}
-
-	void setName(const string str) {
-		name = str;
 	}
 
 	const int getNum() const {
@@ -48,15 +39,6 @@ public:
 
 	void addSection( Section sec) {
 		this->sections.push_back(sec);
-	}
-
-	void print(){
-		cout << "Name: " << getName();
-		cout << ", Department: " << getDepartment();
-		cout << ", Num: "<< getNum() << endl;
-		for(Section s : sections) {
-			s.print();
-		}
 	}
 };
 
