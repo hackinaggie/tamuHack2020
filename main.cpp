@@ -272,7 +272,7 @@ vector<vector<Section>> getScheduleList(vector<Course> courses) {
 	return scheduleList;
 }
 
-int main() {
+int main(int argc, char **argv) {
 	srand(time(NULL));
 	
 	ifstream data ("data/dialogue.txt");
@@ -280,6 +280,7 @@ int main() {
 	int numDialogues;
 	
 	data >> maxLineLen >> sleepNS >> animate >> numDialogues;
+	if(argc > 1) animate = (argv[1][0] == '1');
 	
 	string** text = new string*[numDialogues];
 	int* sizes = new int[numDialogues];
