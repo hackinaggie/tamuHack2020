@@ -290,13 +290,13 @@ int main(int argc, char **argv) {
 		sizes[i] = numStatements;
 		
 		text[i] = new string[numStatements];
-		cout << &text[i] << endl;
 		for(int j = 0; j < numStatements; j++) {
 			getline(data, str);
 			text[i][j] = str;
-			cout << text[i][j] << endl;
 		}
 	}
+	
+	for(int i = 0; i < 100; i++) cout << endl;
 	
 	printParagraph(text[1], sizes[1]);
 	
